@@ -22,4 +22,4 @@ I dessa projekt arbetar jag främst med:
 Syftet med detta repository är att visa upp min tekniska förståelse för hur sårbarheter fungerar i praktiken och hur man effektivt administrerar system ur ett säkerhetsperspektiv.
 
 ---
-*Kontakta mig gärna via [LinkedIn](https://www.linkedin.com/in/aron-wallroth-4584062a5/) eller email [email](mailto:aronwallroth@hotmail.se) om du har några frågor kring min portfölj.*
+*Kontakta mig gärna via [LinkedIn](https://www.linkedin.com/in/aron-wallroth-4584062a5/) eller [email](mailto:aronwallroth@hotmail.se) om du har några frågor kring min portfölj.*
