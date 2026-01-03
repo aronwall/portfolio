@@ -7,16 +7,16 @@ Välkommen till mitt arkiv för projekt och resurser inom IT-säkerhet. Här sam
 | Mapp | Beskrivning |
 | :--- | :--- |
 | [**CV/**](./CV/) | Mitt aktuella CV och professionella bakgrund. |
-| [**cve-2020-1472-exploit/**](./cve-2020-1472-exploit/) | En video-demonstration och teknisk analys av Zerologon-sårbarheten. |
+| [**cve-2020-1472-exploit/**](./cve-2020-1472-demo/) | En demonstration och teknisk analys av Zerologon-sårbarheten. |
 | [**cheat-sheets/**](./cheat-sheets/) | Referensguider för säkerhetskommandon i Windows och Linux. |
 
 ---
 
 ## Verktyg & Miljöer
 I dessa projekt arbetar jag främst med:
-* **Operativsystem:** Linux (Kali, Ubuntu), Windows Server (Active Directory).
+* **Operativsystem:** Linux (Kali, Debian, Ubuntu), Windows Server (+Active Directory).
 * **Skriptspråk:** PowerShell, Bash.
-* **Säkerhetsfokus:** Sårbarhetsanalys (CVE), Systemhärdning, Privilegescalation.
+* **Säkerhetsfokus:** Sårbarhetsanalys (CVE), Systemhärdning, Privilege Escalation.
 
 ## Syfte med portföljen
 Syftet med detta repository är att visa upp min tekniska förståelse för hur sårbarheter fungerar i praktiken och hur man effektivt administrerar system ur ett säkerhetsperspektiv.
