@@ -6,7 +6,7 @@ Välkommen till mitt arkiv för projekt och resurser inom IT-säkerhet. Här sam
 
 | Mapp | Beskrivning |
 | :--- | :--- |
-| [**CV/**](./cv/) | Mitt aktuella CV och professionella bakgrund. |
+| [**cv/**](./cv/) | Mitt aktuella CV och professionella bakgrund. |
 | [**cve-2020-1472-exploit/**](./cve-2020-1472-demo/) | En demonstration och teknisk analys av Zerologon-sårbarheten. |
 | [**cheat-sheets/**](./cheat-sheets/) | Referensguider för säkerhetskommandon i Windows och Linux. |
 
