@@ -15,7 +15,7 @@ För att få bäst förståelse för projektets omfattning och genomförande, v�
 ## Projektet i korthet
 I detta projekt designade och implementerade vi en webbserver (Apache/PHP) med tillhörande databas och diverse tillhörande funktioner för att optimera säkerhet och skalbarhet.
 
-### Min Roll & Ansvar
+### Roll & Ansvar
 Som **gruppledare** ansvarade jag för projektledning, dagliga check-ins och koordinering av teamets sex medlemmar. Utöver ledarskapet implementerade jag följande kritiska funktioner:
 
 * **Monitoreringsstack:** Centraliserad övervakning med **Zabbix** (hårdvarustatus) och **Uptime Kuma** (tillgänglighet).
