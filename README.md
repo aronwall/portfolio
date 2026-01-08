@@ -9,12 +9,14 @@ Välkommen till mitt arkiv för projekt och resurser inom IT-säkerhet. Här sam
 | [**cv/**](./cv/) | Mitt aktuella CV och professionella bakgrund. |
 | [**cve-2020-1472-exploit/**](./cve-2020-1472-demo/) | En demonstration och teknisk analys av Zerologon-sårbarheten. |
 | [**cheat-sheets/**](./cheat-sheets/) | Referensguider för säkerhetskommandon i Windows och Linux. |
+| [**projekt-infrastruktur/**](./projekt-infrastruktur/) | Ett grupparbete från kursen IT-infrastruktur där vi designade och implementerade vi en webbserver med tillhörande databas och diverse tillhörande funktioner. |
 
 ---
 
 ## Verktyg & Miljöer
 I dessa projekt arbetar jag främst med:
-* **Operativsystem:** Linux (Kali, Debian, Ubuntu), Windows Server (+Active Directory).
+* **Operativsystem:** Linux (Kali, Debian, Ubuntu), Windows Server (+ Active Directory).
+* **Monitorering:** Zabbix, Uptime Kuma, Prometheus, Grafana
 * **Skriptspråk:** PowerShell, Bash.
 * **Säkerhetsfokus:** Sårbarhetsanalys (CVE), Systemhärdning, Privilege Escalation.
 
