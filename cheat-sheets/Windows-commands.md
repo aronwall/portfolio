@@ -47,7 +47,7 @@ En samling användbara PowerShell- och CMD-kommandon för systeminventering, anv
 ### Loggar och Historik
 | Syfte | Kommando |
 | :--- | :--- |
-| PowerShell-historik | `Get-Content (Join-Path $env:USERPROFILE 'AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt') -ErrorAction SilentlyContinue \| Select-Object -Last 200` |
+| PowerShell-historik | `Get-Content '~\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt' -EA 0` |
 | Senaste lyckade inloggningar | `Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624} -MaxEvents 10 \| Select TimeCreated, @{n='Account';e={$_.Properties[1].Value}}` |
 | Senaste utloggningar | `Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4634} -MaxEvents 10 \| Select TimeCreated, @{n='Account';e={$_.Properties[1].Value}}` |
 | Misslyckade inloggningar | `Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625}` |
