@@ -10,6 +10,7 @@ Välkommen till mitt arkiv för projekt och resurser inom IT-säkerhet. Här sam
 | [**cve-2020-1472-exploit/**](./cve-2020-1472-demo/) | En demonstration och teknisk analys av Zerologon-sårbarheten. |
 | [**cheat-sheets/**](./cheat-sheets/) | Referensguider för säkerhetskommandon i Windows och Linux. |
 | [**projekt-infrastruktur/**](./projekt-infrastruktur/) | Ett grupparbete från kursen IT-infrastruktur där vi designade och implementerade vi en webbserver med tillhörande databas och diverse tillhörande funktioner. |
+| [**informationssäkerhetspolicy/**](./informationssäkerhetspolicy/) | Ett grupparbete från kursen Informationssäkerhet och IT-juridik som gick ut på att upprätta ett informationssäkeerhetsarbete för ett fiktivt företag, i vilket min del var att författa en informationssäkerhetspolicy. |
 
 ---
 
