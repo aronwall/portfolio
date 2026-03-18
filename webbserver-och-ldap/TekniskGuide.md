@@ -9,6 +9,7 @@ Väl konfigurerade och säkra webbservrar är en hörnsten i modern infrastruktu
 *sudo apt update && sudo apt upgrade -y*
 
 **Vi öppnar vår brandvägg för http, lägger till en “default deny all incoming”-regel och ser till att den är aktiv**
+
 *sudo ufw allow http*
 *sudo ufw default deny incoming*
 *sudo ufw enable*
