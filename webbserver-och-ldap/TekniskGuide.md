@@ -17,36 +17,57 @@ Väl konfigurerade och säkra webbservrar är en hörnsten i modern infrastruktu
 *sudo ufw enable*
 
 **Vi installerar Apache och curl som vi kommer att använda framöver och testar att apache funkar som den ska genom att hämta default-sidan**
+
 *sudo apt install apache2 curl -y*
+
 *curl <span>http</span>://localhost*
 
 Om en lång html-sida med text returneras vet vi att Apache är igång och fungerar
 
 **Vi installerar MariaDB, skapar en databas för wordpress, en användare wpuser med ett lösenord och kör sedan FLUSH PRIVILEGES för att läsa in användarkonton igen**
+
 *sudo apt install mariadb-server -y*
+
 *sudo mariadb -u root*
+
 *CREATE DATABASE wordpress;*
+
 *GRANT ALL PRIVILEGES ON wordpress.\* TO wpuser@localhost IDENTIFIED BY 'MittLösen123';* 
+
 (Välj självklart ett unikt och säkert eget lösenord, eller använd en lösenordsgenerator såsom pwgen)
+
 *FLUSH PRIVILEGES;*
+
 *EXIT;*
+
 <img width="888" height="417" alt="MariaDB" src="https://github.com/user-attachments/assets/0dbcf386-34c8-4f06-94c2-3f9cf9c0dc5d" />
 
 **Vi hämtar den senaste versionen av Wordpress, som kommer hamna i mappen vi just nu befinner oss i**
+
 *curl -sO https://wordpress.org/latest.tar.gz*
 
 **Wordpress använder sig av språket php, som vi därför också behöver hämta moduler för, kolla versionen, verifiera att det är aktiverat med kommandot a2enmod och sedan starta om Apache**
+
 *sudo apt install php libapache2-mod-php php-mysql php-common php-xmlrpc php-json php-opcache php-gd -y*
+
 *php -version*
+
 *sudo a2enmod php8.3*
+
 *sudo systemctl restart apache2*
+
 <img width="783" height="242" alt="php" src="https://github.com/user-attachments/assets/0870aa3d-c14e-4cba-bec9-3ce9766acb64" />
 
 **Vi testar att php fungerar med Apache genom att skapa en php-fil som vi testar att öppna i vår webbläsare**
+
 *sudo nano /var/www/html/info.php*
+
 I filen skriver vi:
+
 *<?php*
+
 *phpinfo();*
+
 Spara och stäng nano, öppna en webbläsare och skriv in “http://localhost/info.php” i adressfältet. En sida med info om php bör öppnas.
 
 **Det är dags att installera Wordpress och vi börjar med att ta bort testfilerna, för att sedan köra installationen, förflytta oss till nya mappen “wordpress” och kopiera sample-config-filen till en ny fil**
