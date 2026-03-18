@@ -44,7 +44,7 @@ Om en lång html-sida med text returneras vet vi att Apache är igång och funge
 
 **Vi hämtar den senaste versionen av Wordpress, som kommer hamna i mappen vi just nu befinner oss i**
 
-*curl -sO https://wordpress.org/latest.tar.gz*
+*curl -sO <span>https</span>://wordpress.org/latest.tar.gz*
 
 **Wordpress använder sig av språket php, som vi därför också behöver hämta moduler för, kolla versionen, verifiera att det är aktiverat med kommandot a2enmod och sedan starta om Apache**
 
@@ -68,23 +68,32 @@ I filen skriver vi:
 
 *phpinfo();*
 
-Spara och stäng nano, öppna en webbläsare och skriv in “http://localhost/info.php” i adressfältet. En sida med info om php bör öppnas.
+Spara och stäng nano, öppna en webbläsare och skriv in “<span>http</span>://localhost/info.php” i adressfältet. En sida med info om php bör öppnas.
 
 **Det är dags att installera Wordpress och vi börjar med att ta bort testfilerna, för att sedan köra installationen, förflytta oss till nya mappen “wordpress” och kopiera sample-config-filen till en ny fil**
+
 *sudo rm /var/www/html/**
+
 *tar zxf latest.tar.gz*
+
 *cd wordpress*
+
 *cp wp-config-sample.php wp-config.php*
 
 **Vi öppnar den nyskapade konfig-filen i nano och ändrar värdena “DB_NAME”, “DB_USER” och “DB_PASSWORD” till det vi valde i MariaDB tidigare, sparar och stänger nano igen.**
+
 <img width="886" height="242" alt="WP-config" src="https://github.com/user-attachments/assets/2f1d9e50-de8c-4f45-b208-4a3ce58af1a6" />
 
 **Vi flyttar filerna i mappen “wordpress” till /var/www/html, hoppar över till den mappen och ändrar ägaren och gruppen av filerna till www-data, som är den användare som Apache körs som**
+
 *sudo mv \* /var/www/html*
+
 *cd /var/www/html*
+
 *sudo chown -R www-data:www-data*
 
 **Vi döper om index.html så att man direkt hamnar på wordpress default-sida istället för apaches default-sida**
+
 *sudo mv index.html index.old*
 
 Vi har nu en fungerande webbserver och kan gå igenom konfigurationen av Wordpress på <span>http</span>://localhost/wp-admin!
@@ -92,38 +101,57 @@ Vi har nu en fungerande webbserver och kan gå igenom konfigurationen av Wordpre
 ## 2. Installera och kör OpenSCAP
 
 **Vi börjar med att installera OpenSCAP och tillhörande konfig-filer**
+
 *sudo apt install libopenscap25 openscap-scanner ssg-base ssg-debderived*
 
 **Vi förflyttar oss till vår hemkatalog, hämtar säkerhetsguiden för OpenSCAP med wget och packar upp den**
+
 *cd ~*
+
 *wget <span>https</span>://github.com/ComplianceAsCode/content/releases/download/v0.1.76/scap-security-guide-0.1.76.zip*
+
 *unzip scap-security-guide-0.1.76.zip*
 
 **Vi kör OpenSCAP och låter den generera en rapport i XML-format och en rapport i html-format att ha som utgångspunkt. OpenSCAP körs med en compliance-standard och mot en specifik version av ett operativsystem, och berättar sedan helt enkelt vilka delar av standarden ens system är compliant mot standarden och vad som inte är det. Jag har i den här guiden valt att köra mot cis_level1_workstation, en grundläggande säkerhetsstandard för workstations.**
+
 *sudo oscap xccdf eval --profile cis_level1_workstation --results cis-results1.xml --report cis-report1.html /home/\*dittanvändarnamn\*/scap-security-guide-0.1.76/ssg-ubuntu2404-ds.xml*
 
 HTML-rapporten som genererades kan sedan öppnas i en webbläsare. För ett helt compliant system behöver man gå igenom hela rapporten och se till att allt uppfylls. Jag kommer att välja ett par punkter som exempel för att härda. En fördel med OpenSCAP är att det ger oss exakta kommandon för att åtgärda problem.
 
 **Åtgärda ägarskap och permissions för känsliga filer**
+
 *sudo chgrp shadow /etc/gshadow-*
+
 *sudo chmod 0640 /etc/gshadow-*
+
 *sudo chmod 0640 /etc/shadow-*
+
 *sudo chmod 0640 /etc/gshadow*
+
 *sudo chmod 0640 /etc/shadow*
+
 <img width="693" height="95" alt="filrättigheter" src="https://github.com/user-attachments/assets/fc09a0a1-5ebe-4d93-bbde-292df0d193ea" />
 
 **Inaktivera tjänsten Apport, som kan förhindra annan härdning**
+
 *sudo systemctl mask --now apport.service*
 
 **Ta bort paket för det osäkra protokollet FTP**
+
 *sudo apt-get remove ftp*
 
 **Sätt en umask, som sätter default-permissions när en fil skapas, vilket förhindrar för höga rättigheter på filer**
+
 *sudo nano /etc/bash.bashrc*
+
 Lägg till en rad längst ner med texten “umask 027”
+
 *sudo nano /etc/login.defs*
+
 Ändra värdet efter “UMASK” till 027
+
 *sudo nano /etc/profile*
+
 Lägg till en rad längst ner med text “umask 027”
 
 Vi har nu provat på att installera Apache, Wordpress och MariaDB, satt upp en fungerande webbserver och provat på att härda systemet där servern hostas med OpenSCAP. Detta skulle kunna ses som utgångspunkten för att kunna hosta en egen webbplats på ett mycket säkert system, eller kan bara vara ett värdefullt projekt att ha provat på för att lära sig systemadministration och härdning.
