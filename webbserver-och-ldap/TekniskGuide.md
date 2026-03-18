@@ -96,7 +96,11 @@ Spara och stäng nano, öppna en webbläsare och skriv in “<span>http</span>:/
 
 *sudo mv index.html index.old*
 
+---
+
 Vi har nu en fungerande webbserver och kan gå igenom konfigurationen av Wordpress på <span>http</span>://localhost/wp-admin!
+
+---
 
 ## 2. Installera och kör OpenSCAP
 
@@ -154,6 +158,10 @@ Lägg till en rad längst ner med texten “umask 027”
 
 Lägg till en rad längst ner med text “umask 027”
 
+---
+
 Vi har nu provat på att installera Apache, Wordpress och MariaDB, satt upp en fungerande webbserver och provat på att härda systemet där servern hostas med OpenSCAP. Detta skulle kunna ses som utgångspunkten för att kunna hosta en egen webbplats på ett mycket säkert system, eller kan bara vara ett värdefullt projekt att ha provat på för att lära sig systemadministration och härdning.
 
-Aron Wallroth, student inom IT-säkerhet, Mars 2026
+---
+
+*Aron Wallroth, student inom IT-säkerhet, Mars 2026*
