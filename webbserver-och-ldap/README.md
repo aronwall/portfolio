@@ -14,7 +14,7 @@ Demonstrationen av OpenLDAP och SSSD kan ses här under.
 
 
 ### Se demonstrationen
-[![Se videon på YouTube](https://img.youtube.com/vi/H2eNq4NP1y0.jpg)](https://www.youtube.com/watch?v=H2eNq4NP1y0)
+[![Se videon på YouTube](https://img.youtube.com/vi/H2eNq4NP1y0/0.jpg)](https://www.youtube.com/watch?v=H2eNq4NP1y0)
 
 ### Teknisk stack
 
