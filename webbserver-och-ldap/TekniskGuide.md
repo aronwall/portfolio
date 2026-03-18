@@ -5,6 +5,7 @@ Väl konfigurerade och säkra webbservrar är en hörnsten i modern infrastruktu
 ## 1. Installera och testa verktyg
 
 **Vi börjar med att säkerställa att vi har de senaste versionerna av alla paket installerade**
+
 *sudo apt update && sudo apt upgrade -y*
 
 **Vi öppnar vår brandvägg för http, lägger till en “default deny all incoming”-regel och ser till att den är aktiv**
